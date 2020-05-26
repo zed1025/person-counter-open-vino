@@ -4,7 +4,7 @@ This is an Edge application which can work on a range of intel devices (from CPU
 
 ### Video Link to the project
 I've recorded a video of working of the project on my local machine. 
-[[Video Link](images/yt.jpg)](https://www.youtube.com/watch?v=ynGGSE9zy9c&feature=youtu.be)
+[[Video Link](https://github.com/zed1025/person-counter-open-vino/blob/master/images/yt.jpg)](https://www.youtube.com/watch?v=ynGGSE9zy9c&feature=youtu.be)
 - https://www.youtube.com/watch?v=ynGGSE9zy9c&feature=youtu.be
 
 <hr>
@@ -23,7 +23,7 @@ I've recorded a video of working of the project on my local machine.
 ### Custom Layer Implementation
 - [Source](https://docs.openvinotoolkit.org/latest/_docs_HOWTO_Custom_Layers_Guide.html)
 - The following figure shows the basic processing steps for the Model Optimizer highlighting the two necessary custom layer extensions, the Custom Layer Extractor and the Custom Layer Operation.
-[](images/MO_extensions_flow.png)
+[](https://github.com/zed1025/person-counter-open-vino/blob/master/images/MO_extensions_flow.png)
 - The Model Optimizer first extracts information from the input model which includes the topology of the model layers along with parameters, input and output format, etc., for each layer. The model is then optimized from the various known characteristics of the layers, interconnects, and data flow which partly comes from the layer operation providing details including the shape of the output for each layer. Finally, the optimized model is output to the model IR files needed by the Inference Engine to run the model.
 - The custom layer extensions needed by the Model Optimizer are:
   - _Custom Layer Extractor_: Responsible for identifying the custom layer operation and extracting the parameters for each instance of the custom layer. The layer parameters are stored per instance and used by the layer operation before finally appearing in the output IR.
@@ -31,7 +31,7 @@ I've recorded a video of working of the project on my local machine.
 
 ### Custom Layer Extensions for the Inference Engine
 - The following figure shows the basic flow for the Inference Engine highlighting two custom layer extensions for the CPU and GPU Plugins, the Custom Layer CPU extension and the Custom Layer GPU Extension.
-[](images/IE_extensions_flow.png)
+[](https://github.com/zed1025/person-counter-open-vino/blob/master/images/IE_extensions_flow.png)
 - Each device plugin includes a library of optimized implementations to execute known layer operations which must be extended to execute a custom layer. The custom layer extension is implemented according to the target device:
   - _Custom Layer CPU Extension_: A compiled shared library (.so or .dll binary) needed by the CPU Plugin for executing the custom layer on the CPU.
   - _Custom Layer GPU Extension_: OpenCL source code (.cl) for the custom layer kernel that will be compiled to execute on the GPU along with a layer description file (.xml) needed by the GPU Plugin for the custom layer kernel.
